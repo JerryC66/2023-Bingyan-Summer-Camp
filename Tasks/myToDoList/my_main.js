@@ -95,6 +95,7 @@ function toggleAll(){
         }
         }     
     countItem();
+    displayClear();
 }
 var toggleAllCheckbox = document.querySelector('.toggle-all');
 toggleAllCheckbox.addEventListener('change',toggleAll);
