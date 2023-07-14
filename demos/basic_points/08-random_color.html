@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color example — event handler attribute</title>
+    <style>
+        button {
+            margin: 10px
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <button>Change color</button>
+    <script>
+        const btn = document.querySelector('button');
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+
+        btn.addEventListener('dblclick', () => {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor = rndCol;
+        });
+
+//现在试着依次将 click 改为以下不同的值，并观察示例中的结果：
+
+// focus 和 blur：当按钮被聚焦或失焦时，颜色会改变；尝试按下 tab 键来聚焦于按钮，再次按下该键来使按钮失去焦点。这些事件通常用于在聚焦时显示填入表单字段的信息，或者在表单字段填入不正确的值时显示错误信息。
+// dblclick：颜色只在按钮被双击时改变。
+// mouseover 和 mouseout：当鼠标指针在按钮上悬停，或指针移出按钮时，颜色分别会改变。
+// 一些事件，如 click（点击事件），几乎对任何元素都可用。其他事件则更具体，只在某些情况下有用：例如，play 事件只对某些元素有效，如 <video> 元素。
+    
+    </script>
+</body>
+
+</html>

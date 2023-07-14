@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Promise 异步变成同步
+        function one () {
+            return "I am one"
+        }
+
+        // function two () {
+        //     setTimeout(() => {
+        //         return "I am two"
+        //     },3000)
+        // }
+
+
+        function two () {
+            return new Promise ((resolve,reject) => {
+                setTimeout(() => {
+                    resolve("I am two")
+                },3000)
+            })
+        }
+        function three () {
+                return "I am three"
+            }
+
+        async function run () {
+            console.log(one())
+            console.log(await two())
+            console.log(three())
+
+        }
+        run()
+    </script>
+    
+</body>
+</html>
