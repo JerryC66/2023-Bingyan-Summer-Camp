@@ -1494,9 +1494,7 @@ fs.stat('sample.txt', function (err, stat) {
 
 
 
-
-
-## 五、一些其他的points
+## 六、一些其他的points
 
 #### 一些 DOM 对象方法
 
@@ -1806,6 +1804,41 @@ fruits.forEach(fruit => {
 
 
 
+####  map()
+
+在编程中，`map()`是一种常用的函数或方法，用于处理数组或类似结构（如列表）的元素，并返回一个新的数组，其中包含根据指定的转换规则对原始数组中的每个元素进行处理后的结果。
+
+`map()`方法的基本语法如下：
+
+```javascript
+const newArray = originalArray.map(callbackFunction);
+```
+
+其中：
+
+- `originalArray` 是要处理的原始数组。
+- `callbackFunction` 是一个回调函数，用于指定如何对原始数组中的每个元素进行处理。回调函数接收三个参数：
+  1. `currentValue`：当前正在处理的元素的值。
+  2. `index`：当前正在处理的元素的索引（可选）。
+  3. `array`：原始数组（可选）。
+
+`map()`方法会依次遍历原始数组的每个元素，并将每个元素传递给回调函数进行处理。回调函数返回的值将被添加到新的数组中，最终形成一个新的数组。原始数组保持不变，而新数组包含了根据回调函数处理后的元素。
+
+示例：
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// 使用map()方法将数组中的每个元素乘以2，并创建新的数组
+const doubledNumbers = numbers.map((num) => num * 2);
+
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+```
+
+在这个例子中，`map()`方法将`numbers`数组中的每个元素乘以2，并将处理后的结果放入新的数组`doubledNumbers`。原始数组`numbers`保持不变。
+
+`map()`方法对于需要处理数组中的每个元素，并且生成一个新的数组的情况非常有用，比如进行转换、格式化或提取数据等操作。
+
 
 
 #### querySelector和getElementsBy...
@@ -1918,7 +1951,7 @@ var x = 5;
 ```
 以下是错误经历：
 var evilcircle = new EvilCircle (
-      ``````
+``````
     );
 evilcircle.setControls();
 
@@ -1930,3 +1963,5 @@ EvilCircle.prototype.setControls = function () {
 正确的应该先定义后调用，否则setControls的方法没有赋给EvilCircle的原型
 ```
 
+
+```
